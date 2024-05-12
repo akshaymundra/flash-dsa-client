@@ -1,0 +1,26 @@
+.carousal {
+    display: flex;
+    /* margin: 10px; */
+    margin-bottom: 28px;
+    border-radius: 10px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.q_card {
+    /* min-width: calc(100% - 20px); */
+    width: 100%;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.scroll_buttons {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.scroll_button {
+    margin-block: 5px;
+}
