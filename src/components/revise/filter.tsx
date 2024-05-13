@@ -3,6 +3,7 @@ import CheckboxWithLabel from "../atoms/checkbox-w-label";
 import { useState } from "react";
 import { CheckedState } from "@radix-ui/react-checkbox";
 import { Button } from "../ui/button";
+import styles from '@/styles/revise-filter.module.css'
 
 
 const topics = [
@@ -14,12 +15,12 @@ const topics = [
     { label: 'BST', value: 'bst' },
     { label: 'String', value: 'string' },
     { label: 'Greedy', value: 'greedy' },
-    { label: 'Sliding Window', value: 'sliding_window' },
+    { label: 'Sliding Window', value: 'sliding window' },
 ]
 const levels = [
     { label: 'All', value: 'all' },
     { label: 'Easy', value: 'easy' },
-    { label: 'Medium', value: 'med' },
+    { label: 'Medium', value: 'medium' },
     { label: 'Hard', value: 'hard' },
 ]
 
@@ -73,18 +74,18 @@ const ReviseFilter = () => {
 
     return (
         <div
-            className="flex flex-1 justify-center items-center min-h-full"
+            className="flex flex-1 items-center min-h-full"
         >
 
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 p-3 border rounded-lg shadow-md"
+                className="flex mx-auto w-full sm:w-[80%] lg:w-[60%] flex-col gap-4 p-3 border rounded-lg shadow-md"
             >
                 <legend className="text-2xl font-semibold ">Filter</legend>
 
                 <div className="flex flex-col gap-4">
                     <p>Select Topic</p>
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className={`grid ${styles.filter_grid} gap-4`}>
                         {topics?.map((topic, i) => (
                             <CheckboxWithLabel
                                 label={topic.label}
@@ -99,7 +100,7 @@ const ReviseFilter = () => {
                 <hr />
                 <div className="flex flex-col gap-4">
                     <p>Select Level</p>
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className={`grid  ${styles.filter_grid} gap-4`}>
                         {levels?.map((level, i) => (
                             <CheckboxWithLabel
                                 label={level.label}

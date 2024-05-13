@@ -16,6 +16,7 @@ const DataRow = ({
         <TableRow role="button">
             <TableCell>{index + 1}</TableCell>
             <TableCell>{data?.name}</TableCell>
+            <TableCell className="capitalize">{data?.topic}</TableCell>
             <TableCell>
                 <QLevel level={data?.level} />
             </TableCell>

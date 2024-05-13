@@ -8,7 +8,6 @@ const Home = () => {
             <Suspense fallback={"Loading..."}>
                 <DataTable />
             </Suspense>
-
         </main>
     )
 }

@@ -9,7 +9,7 @@ export default function QLevel({
 }) {
 
     const classes = clsx(
-        'text-xs text-white sm:py-1 px-1 rounded-full flex justify-center items-center capitalize',
+        'text-xs text-white py-[2px] sm:py-1 px-2 rounded-full flex justify-center items-center capitalize',
         {
             'bg-red-500': level === 'hard',
             'bg-yellow-500': level === 'medium',
