@@ -1,26 +1,34 @@
+import { FileStack, Home, Moon, Sun } from 'lucide-react'
 import Navlink from './navlink'
+import { Button } from '../ui/button'
+import { useTheme } from './theme-provider'
 
 
-const routemap = [
-    {
-        href: '/',
-        label: 'Home',
-        tooltip: 'Home',
-        icon: '🏠'
-    },
-    {
-        href: '/revise',
-        label: 'Revise',
-        tooltip: 'Revise',
-        icon: '📚'
-    }
-]
+
 
 
 const Sidebar = () => {
+
+    const { setTheme, theme } = useTheme();
+
+    const routemap = [
+        {
+            href: '/',
+            label: 'Home',
+            tooltip: 'Home',
+            icon: <Home className={`${theme === "dark" ? 'text-foreground' : 'text-background'}`} />
+        },
+        {
+            href: '/revise',
+            label: 'Revise',
+            tooltip: 'Revise',
+            icon: <FileStack className={`${theme === "dark" ? 'text-foreground' : 'text-background'}`} />
+        }
+    ]
+
     return (
         <div
-            className="fixed inset-y left-0 z-10 w-[57px] bg-foreground h-full flex flex-col justify-center items-center"
+            className="fixed inset-y left-0 z-10 w-[57px] bg-foreground dark:bg-background dark:border-r h-full flex flex-col justify-center items-center"
         >
             <div className='flex flex-col gap-4'>
                 {routemap.map((route, index) => (
@@ -32,6 +40,17 @@ const Sidebar = () => {
                         icon={route.icon}
                     />
                 ))}
+                <Button
+                    size={"icon"}
+                    onClick={() => setTheme(theme == "light" ? "dark" : "light")}
+                    variant={"link"}
+                >
+                    {theme == "light" ?
+                        <Moon className={`text-background`} />
+                        :
+                        <Sun className='text-foreground' />
+                    }
+                </Button>
             </div>
         </div>
     )

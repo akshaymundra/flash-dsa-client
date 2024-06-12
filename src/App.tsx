@@ -34,7 +34,7 @@ function App() {
 
 
   return (
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
       <RouterProvider router={router} />
     </ThemeProvider>
   )
